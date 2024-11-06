@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style {
+        text-align: center;
+    }> User_id {{ user_id }} </h1>
+    <canvas id="myChart"></canvas>
+    <script>
+        var data = {{ data | tojson }};
+        
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: data.map(item => item.slide_id), // slide_id
+                datasets: [{
+                    label: 'Correct Score',
+                    data: data.map(item => item.correct_mark), // correct_mark
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Incorrect Score',
+                    data: data.map(item => item.incorrect_mark), // incorrect_mark
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+         <button type="button" class="return-btn" id="return"> View your progress</button>
+
+         <script src="/static/scripts.js?v=1.0"></script>
+</body>
+</html>

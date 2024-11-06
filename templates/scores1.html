@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Here is your scores</title>
+    <link rel="stylesheet" href="/static/styles.css">
+
+    </head>
+    <body>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th,td {
+                padding: 10px;
+            }
+            </style>
+        <div class="container">
+            <div class="table-container">
+            <h1 class="header"> This is the score page.</h1>
+            <table>
+                <tr>
+                    <th>User_id</th>
+                    <th>Correct_Score</th>
+                    <th>Incorrect_Score</th>
+                </tr>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row.user_id }}</td>
+                    <td>{{ row.correct_score }}</td>
+                    <td>{{ row.incorrect_score }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="scoreChart"></canvas>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var correctScores = {{ data[0]['correct_score'] }};
+            var incorrectScores = {{ data[0]['incorrect_score'] }};
+            
+            var ctx = document.getElementById('scoreChart').getContext('2d');
+            var scoreChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Correct', 'Incorrect'],
+                    datasets: [{
+                        data: [correctScores, incorrectScores],
+                        backgroundColor: ['#4CAF50', '#F44336']
+                    }]
+                }
+            });
+        </script>
+            </div>
+        </div>
+     <button type="button" class="return-btn" id="return"> View your progress</button>
+
+     <script src="/static/scripts.js?v=1.0"></script>
+    </body>
+</html>

@@ -1,0 +1,217 @@
+.flip-card {
+  width: 400px;
+  height: 400px; /* Maintain a specific height */
+  background-color: #fff;
+  border: 6px solid green;
+  perspective: 1000px;
+}
+
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.5s; 
+    transform-style: preserve-3d;
+  }
+
+  .flip-card.flipped .flip-card-inner {
+    /*Flipping the card*/
+    transform: rotateY(180deg);
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /*.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }*/
+
+  /* Position the front and back side */
+  .card-container {
+    width: 1500px;
+    height: 450px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+  }
+
+  /* It is the css style of paragraph in my game2*/
+  .text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /* Safari */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Card 1 variant styles */
+.card-variant-1_slide1 .flip-card-front {
+  background-color: lightblue;
+  color: black;
+}
+
+.card-variant-1_slide1 .flip-card-back {
+  background-color: lightgreen;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Card 2 variant styles */
+.card-variant-2_slide1 .flip-card-front {
+  background-color: blue;
+  color: black;
+}
+
+.card-variant-2_slide1 .flip-card-back {
+  background-color: lightcoral;
+  color: white;
+  transform: rotateY(180deg);
+}
+  /* Card 1 variant styles for slide2*/
+.card-variant-1_slide2 .flip-card-front {
+  background-color: lightblue;
+  color: black;
+}
+
+.card-variant-1_slide2 .flip-card-back {
+  background-color: lightgreen;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Card 2 variant styles */
+.card-variant-2_slide2 .flip-card-front {
+  background-color: blue;
+  color: black;
+}
+
+.card-variant-2_slide2 .flip-card-back {
+  background-color: lightcoral;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+  /* Card 1 variant styles for slide3*/
+.card-variant-1_slide3 .flip-card-front {
+  background-color: lightblue;
+  color: black;
+}
+
+.card-variant-1_slide3 .flip-card-back {
+  background-color: lightgreen;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Card 2 variant styles for slide3 */
+.card-variant-2_slide3 .flip-card-front {
+  background-color: blue;
+  color: black;
+}
+
+.card-variant-2_slide3 .flip-card-back {
+  background-color: lightcoral;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+  .button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .button-group button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /*Make buttons are interactive*/
+  }
+  .return-btn {
+    color: red;
+  }
+  .confirm-btn {
+    color: green;
+  }
+
+  .next-btn {
+    background-color: lightcyan;
+    color: blue;
+  }
+
+  .slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    padding-bottom: 56.25%; /*I used this to maintain the 16:9 ratio*/
+    background-color: lightslategray;
+  }
+
+  .active {
+    display: block;
+  }
+
+  /*hi*/
+
+  .slide-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%; /*The content inside will stretch to fit the screen*/
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+  }
+
+  .header {
+    font-family: Times;
+    font-size: 3vw;
+    max-font-size: 50px;
+    color: #333;
+    text-align: center;
+  }
+
+  /* Adjust header font size for smaller screens */
+@media (max-width: 600px) {
+  .header {
+      font-size: 24px;
+  }
+  .button-group {
+      gap: 10px; /* Small gap on narrow screen*/
+  }
+}
+  .paragraph {
+    font-family: Arial;
+    font-size: 25px;
+    color: black;
+    text-align: left;
+  }
+
+  /* Here is a css style for my game scores*/
+  .container {
+    display: flex;
+  }
+
+  .table-container, .chart-container {
+    margin: 10px;
+  }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1 class="header">Choose the correct word</h1>
+    <h2 class="header">from the following flash cards</h2>
+
+    <div class="slide-content">
+        <form action="/game1" method="POST">
+            <div id="slide_container">
+                
+                <!-- Slide 1 -->
+                <div id="slide1" class="slide active">
+                    <h1 class="header">Who invaded Ukraine</h1>
+                    <div class="card-container">
+                        <div class="flip-card card-variant-1_slide1">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>Russia</h2>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h2>Your answer is correct</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" name="answer" id="checkbox1_slide1" value="correct">
+                    
+                        <div class="flip-card card-variant-2_slide1">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>America</h2>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h2>Your answer is incorrect</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" name="answer" id="checkbox2_slide1" value="incorrect">
+                    </div>
+                </div> <!-- End of Slide 1 -->
+
+                <!-- Slide 2 -->
+                <div id="slide2" class="slide">
+                    <h1 class="header">Slide 2</h1>
+                    <div class="card-container">
+                        <div class="flip-card card-variant-1_slide2">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>Russia</h2>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h2>Your answer is correct</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" name="answer" id="checkbox1_slide2" value="correct">
+                    
+                        <div class="flip-card card-variant-2_slide2">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>America</h2>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h2>Your answer is incorrect</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" name="answer" id="checkbox2_slide2" value="incorrect">
+                    </div>
+                </div> <!-- End of Slide 2 -->
+
+                <!-- Slide 3 -->
+                <div id="slide3" class="slide">
+                    <h1 class="header">Slide 3</h1>
+                    <div class="card-container">
+                        <div class="flip-card card-variant-1_slide3">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>Russia</h2>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h2>Your answer is correct</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" name="answer" id="checkbox1_slide3" value="correct">
+                    
+                        <div class="flip-card card-variant-2_slide3">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <h2>America</h2>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h2>Your answer is incorrect</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="checkbox" name="answer" id="checkbox2_slide3" value="incorrect">
+                    </div>
+                </div> <!-- End of Slide 3 -->
+            </div> <!-- End of slide_container -->
+            <!-- Button Group -->
+            <div class="button-group">
+                <button type="submit" class="confirm-btn" id="confirm1">Confirm</button>
+                <button type="button" class="next-btn" id="next">Next</button>
+                <button type="submit" class="exit-btn" id="exit">Exit</button>
+            </div>
+        </form>
+    </div> <!-- End of slide-content -->
+
+    <script src="/static/scripts.js?v=1.0"></script>
+</body>
+</html>
+
+
+
+

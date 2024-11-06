@@ -1,0 +1,11 @@
+cs50
+Flask
+Flask-Session
+pytz
+requests
+
+from functools import wraps
+from flask import Flask, request, render_template, jsonify, redirect, session,url_for
+from cs50 import SQL
+from flask_session import Session
+from werkzeug.security import check_password_hash, generate_password_hash

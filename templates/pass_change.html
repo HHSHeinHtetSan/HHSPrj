@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change your password
+{% endblock %}
+
+{% block main %}
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: auto;
+        }
+
+        label, input {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <h1>Change Your Password</h1>
+    <form action="/changepass" method="post">
+        <label for="current-password">Current Password:</label>
+        <input autocomplete="off" id="current_password" name="current_password" placeholder="Insert current password" type="password">
+
+        <label for="newpassword-a">New Password:</label>
+        <input name="new_password_a" id="password" placeholder="Password" type="password" required>
+        <input type="checkbox" onclick="viewFunction()"> Show Password
+        <label for="new_password-b">Confirm New Password:</label>
+        <input name="confirmation" id="confirmation" placeholder="Confirm Password" type="password" required>
+
+        <input type="submit" value="Change Password">
+    </form>
+    <p id="message" style="color: {{ color }}">{{ message }}</p>
+<div id="notification"></div>
+    <script>
+        function viewFunction() {
+    var current = document.getElementById("current_password");
+    var password = document.getElementById("password");
+    var confirmation = document.getElementById("confirmation");
+    if (current.type == "password" && password.type === "password" && confirmation.type === "password") {
+        current.type = "text";
+        password.type = "text";
+        confirmation.type = "text";
+    } else {
+        current.type = "password";
+        password.type = "password";
+        confirmation.type = "password";
+    }
+}
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            const submitButton = document.getElementById('submitButton');
+            const messageElement = document.getElementById('message');
+
+            function validatePassword() {
+                const password = passwordInput.value;
+                let message = "";
+                let isValid = true;
+
+                if (password.length < 6) {
+                    message = "Length should be at least 6";
+                    isValid = false;
+                } else if (password.length > 20) {
+                    message = "Length should not be greater than 20";
+                    isValid = false;
+                } else if (!/\d/.test(password)) {
+                    message = "Password should have at least one numeral";
+                    isValid = false;
+                } else if (!/[A-Z]/.test(password)) {
+                    message = "Password should have at least one uppercase letter";
+                    isValid = false;
+                } else if (!/[a-z]/.test(password)) {
+                    message = "Password should have at least one lowercase letter";
+                    isValid = false;
+                } else if (!/[$@#%]/.test(password)) {
+                    message = "Password should have at least one of the symbols $@#%";
+                    isValid = false;
+                } else {
+                    message = "Password is Valid";
+                }
+
+                messageElement.textContent = message;
+                messageElement.style.color = isValid ? 'green' : 'red';
+                submitButton.disabled = !isValid;
+            }
+
+            passwordInput.addEventListener('input', validatePassword);
+            validatePassword();  // Initial validation
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the blank to find the correct word</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <h1 class="header">Fill in the blank with the correct word</h1>
+    <div class="slide-content">
+        <form action="/game2" method="POST">
+            <div id="slide_container">
+                <!--Slide 1-->
+                <div id="slide0" class="slide active">
+                    <h1 class="header">Python Programming</h1>
+                    <div class="text-container">
+                        <p class="paragraph">
+                            This paragraph is about answering questions quiz game.
+                            You need to answer correctly and find out how much knowledge you have in this subject.
+                            After the final slide,you can find out how many marks you obtained from this quiz.
+                        </p>
+                        <!--Inside here,I gotta put a text paragraph and a blank to get a text input-->
+                        <!--I need to consider about sending it back and forth to server-->
+                    </div> <!--This is the end of the text-container-->
+                </div> <!--This is the end of the slide1-->
+
+                <!--Slide 1-->
+                <div id="slide1" class="slide">
+                    <h1 class="header">Python Programming 2</h1>
+                    <div class="text-container">
+                        <p class="paragraph">
+                            Python is a popular programming language known for its <input type="text" id="blank1_slide1" size="3">and <input type="text" id="blank2_slide1" size="3"> syntax.<br> 
+                            It is widely used in fields like <input type="text"id="blank3_slide1" size="3">
+                        , <input type="text" id="blank4_slide1" size="3">, and data science due to its extensive libraries and supportive community.<br>
+                        Python encourages <input type="text"id="blank5_slide1" size="3"> thinking and is ideal for both beginners and experienced <input type="text"id="blank6_slide1" size="3">.<br>
+                        Whether you are automating tasks, building applications, or analyzing data, Python provides tools to make<input type="text"id="blank7_slide1"size="3">easier and more efficient.
+                        </p>
+                        <!--Inside here,I gotta put a text paragraph and a blank to get a text input-->
+                        <!--I need to consider about sending it back and forth to server-->
+                    </div> <!--This is the end of the text-container-->
+                </div> <!--This is the end of the slide1-->
+
+                <!--Slide 2-->
+                <div id="slide2" class="slide">
+                    <h1 class="header">Python Programming 2</h1>
+                    <div class="text-container">
+                        <p class="paragraph">
+                            Python is a popular programming language known for its <input type="text" id="blank1_slide2" size="3">and <input type="text" id="blank2_slide2" size="3"> syntax.<br> 
+                            It is widely used in fields like <input type="text"id="blank3_slide2" size="3">
+                        , <input type="text" id="blank4_slide2" size="3">, and data science due to its extensive libraries and supportive community.<br>
+                        Python encourages <input type="text"id="blank5_slide2" size="3"> thinking and is ideal for both beginners and experienced <input type="text"id="blank6_slide2" size="3">.<br>
+                        Whether you are automating tasks, building applications, or analyzing data, Python provides tools to make<input type="text"id="blank7_slide2"size="3">easier and more efficient.
+                        </p>
+                        <!--Inside here,I gotta put a text paragraph and a blank to get a text input-->
+                        <!--I need to consider about sending it back and forth to server-->
+                    </div> <!--This is the end of the text-container-->
+                </div> <!--This is the end of the slide2-->
+                
+            </div><!--This is the end of the slide container-->
+        </form>
+            <!-- Button Group -->
+            <div class="button-group">
+                <button type="submit" class="confirm-btn" id="confirm2">Confirm</button>
+                <button type="button" class="next-btn" id="next">Next</button>
+                <button type="submit" class="exit-btn" id="exit">Exit</button>
+            </div>
+    </div><!--This is the end of the slide-content-->
+
+    <script src="/static/scripts.js?v=1.0"></script>
+    </body>
+</html>

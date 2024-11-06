@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register Here
+{% endblock %}
+
+{% block main %}
+<h1>Register</h1>
+<form action="/register" method="post" id="registerForm">
+    <input autocomplete="off" name="username" id="username" placeholder="Username" type="text" required>
+    <input name="password" id="password" placeholder="Password" type="password" required>
+    <input type="checkbox" onclick="viewFunction()"> Show Password
+    <input name="confirmation" id="confirmation" placeholder="Confirm Password" type="password" required>
+    <button type="submit" id="submitButton">Submit</button>
+</form>
+<p id="message" style="color: {{ color }}">{{ message }}</p>
+<div id="notification"></div>
+    <script>
+        function viewFunction() {
+    var password = document.getElementById("password");
+    var confirmation = document.getElementById("confirmation");
+    if (password.type === "password" && confirmation.type === "password") {
+        password.type = "text";
+        confirmation.type = "text";
+    } else {
+        password.type = "password";
+        confirmation.type = "password";
+    }
+}
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            const submitButton = document.getElementById('submitButton');
+            const messageElement = document.getElementById('message');
+
+            function validatePassword() {
+                const password = passwordInput.value;
+                let message = "";
+                let isValid = true;
+
+                if (password.length < 6) {
+                    message = "Length should be at least 6";
+                    isValid = false;
+                } else if (password.length > 20) {
+                    message = "Length should not be greater than 20";
+                    isValid = false;
+                } else if (!/\d/.test(password)) {
+                    message = "Password should have at least one numeral";
+                    isValid = false;
+                } else if (!/[A-Z]/.test(password)) {
+                    message = "Password should have at least one uppercase letter";
+                    isValid = false;
+                } else if (!/[a-z]/.test(password)) {
+                    message = "Password should have at least one lowercase letter";
+                    isValid = false;
+                } else if (!/[$@#%]/.test(password)) {
+                    message = "Password should have at least one of the symbols $@#%";
+                    isValid = false;
+                } else {
+                    message = "Password is Valid";
+                }
+
+                messageElement.textContent = message;
+                messageElement.style.color = isValid ? 'green' : 'red';
+                submitButton.disabled = !isValid;
+            }
+
+            passwordInput.addEventListener('input', validatePassword);
+            validatePassword();  // Initial validation
+        });
+    </script>
+{% endblock %}

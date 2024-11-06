@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Password
+{% endblock %}
+
+{% block main %}
+
+    <h1>User's Portfolio </h1>
+
+    
+    <div>
+        <p> Game1Score {{ data.game1_score }}</p>
+    </div>
+
+    <div>
+        <p> Game2Score: {{ data.game2_score }}</p>
+    </div>
+
+    <a href="/changepass">
+        <button>Change Password</button>
+    </a>
+{% endblock %}

@@ -1,0 +1,10 @@
+ajax request, 
+javascript ko use p dot http request loat tr
+-   response a nay nae ka "" (string), json, html
+
+http response loat lite yin
+-   get request game 1 >> render game1.html
+-   post request game 1 >> flip the card then, send request to insert the data, no need to rerender()
+        - json insert data
+        - status response ta khu khu pay p dot loat lite yin ya p
+-   next button press   >> next slide will be shown, slide_continer.innerHTML="", ajax request to backend, json data yu p dot new slide render.
