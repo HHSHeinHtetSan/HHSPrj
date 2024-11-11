@@ -44,6 +44,12 @@
     </form>
     <p id="message" style="color: {{ color }}">{{ message }}</p>
 <div id="notification"></div>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+</style>
     <script>
         function viewFunction() {
     var current = document.getElementById("current_password");

@@ -41,8 +41,9 @@
   /* It is the css style of paragraph in my game2*/
   .text-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
   }
 
   .flip-card-front, .flip-card-back {
@@ -69,7 +70,7 @@
 
 /* Card 2 variant styles */
 .card-variant-2_slide1 .flip-card-front {
-  background-color: blue;
+  background-color: lightblue;
   color: black;
 }
 
@@ -92,7 +93,7 @@
 
 /* Card 2 variant styles */
 .card-variant-2_slide2 .flip-card-front {
-  background-color: blue;
+  background-color: lightblue;
   color: black;
 }
 
@@ -116,7 +117,7 @@
 
 /* Card 2 variant styles for slide3 */
 .card-variant-2_slide3 .flip-card-front {
-  background-color: blue;
+  background-color: lightblue;
   color: black;
 }
 
@@ -139,6 +140,7 @@
     font-size: 16px;
     cursor: pointer; /*Make buttons are interactive*/
   }
+
   .return-btn {
     color: red;
   }
@@ -191,6 +193,26 @@
     text-align: center;
   }
 
+  .header1 {
+    font-family: Times;
+    font-size: x-large;
+    color: #333;
+    text-align: center;
+  }
+
+  .paragraph_disclaimer {
+    font-family: arial;
+    font-size: large;
+    text-align: center;
+    color: red;
+  }
+
+  .header_disclaimer {
+    font-family: arial;
+    font-size: medium;
+    text-align: center;
+    color: red;
+  }
   /* Adjust header font size for smaller screens */
 @media (max-width: 600px) {
   .header {
@@ -202,9 +224,9 @@
 }
   .paragraph {
     font-family: Arial;
-    font-size: 25px;
+    font-size: 35px;
     color: black;
-    text-align: left;
+    text-align: center;
   }
 
   /* Here is a css style for my game scores*/
